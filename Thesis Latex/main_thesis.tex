@@ -1,0 +1,200 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{titling}
+
+\usepackage{stfloats}
+
+\pretitle{\begin{center}\Huge\bfseries}
+\posttitle{\par\end{center}\vskip 0.5em}
+\preauthor{\begin{center}\Large\ttfamily}
+\postauthor{\end{center}}
+\predate{\par\large\centering}
+\postdate{\par}
+
+%******************************
+\usepackage[T1]{fontenc}
+
+\usepackage[tracking]{microtype}
+
+\usepackage[sc,osf]{mathpazo}   % With old-style figures and real smallcaps.
+\linespread{1.025}              % Palatino leads a little more leading
+
+% Euler for math and numbers
+\usepackage[euler-digits,small]{eulervm}
+\AtBeginDocument{\renewcommand{\hbar}{\hslash}}
+
+\usepackage{ntheorem}
+
+% No easy way of putting the theorem description in italics?
+% It seems I need to define a new style...
+\makeatletter
+\newtheoremstyle{mystyle}% 
+   {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\theorem@separator]}% 
+   {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ \textit{(##3)}\theorem@separator]}
+\makeatother
+\theoremstyle{mystyle}
+\theoremheaderfont{\scshape}
+\theorembodyfont{\upshape}
+
+\newtheorem{theorem}{theorem}
+\usepackage{listings}
+
+
+%* \usepackage{biblatex}
+
+%* \addbibresource{library.bib}
+
+% *** CITATION PACKAGES ***
+\usepackage{natbib}
+\bibliographystyle{unsrtnat}
+\usepackage{uri}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{minted,breakable,xparse,skins}
+
+\definecolor{bg}{gray}{0.95}
+\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+  breakable=true,
+  listing engine=minted,
+  listing only,
+  minted language=#2,
+  minted style=default,
+  minted options={%
+    linenos,
+    gobble=0,
+    breaklines=true,
+    breakafter=(,
+    fontsize=\footnotesize, %* \small
+    numbersep=8pt,
+    #1},
+  boxsep=0pt,
+  left skip=0pt,
+  right skip=0pt,
+  left=25pt,
+  right=0pt,
+  top=3pt,
+  bottom=3pt,
+  arc=5pt,
+  leftrule=0pt,
+  rightrule=0pt,
+  bottomrule=2pt,
+  toprule=2pt,
+  colback=bg,
+  colframe=orange!70,
+  enhanced,
+  overlay={%
+    \begin{tcbclipinterior}
+    \fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+    \end{tcbclipinterior}},
+  #3
+}
+  
+\usepackage{xcolor}
+\usepackage{soul}
+
+\definecolor{Light}{gray}{.90}
+\sethlcolor{Light}
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\hl{#1}}}
+\setlength{\parindent}{0pt}
+
+\title{Multifunctionality in Recurrent neural networks based on LSTMs}
+\author{Ian Emerik Leko}
+\date{September 2022}
+
+\begin{document}
+
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+}
+
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \maketitle
+  
+  \vspace{5pt}
+  
+\section*{Declaration of Authorship} 
+This is to certify that the work I am submitting is my own and has not been submitted for another degree, either at University College Cork or elsewhere. All external references and sources are clearly acknowledged and identified within the contents. I have read and understood the regulations of University College Cork concerning plagiarism and intellectual property.
+
+\section*{Acknowledgements}
+I would first like to thank both of my supervisors Andrew Keane and Brendan Byrne who's input and guidance and input have been invaluable thought this project. I would also like to thank Brendan for the resources and data provided through TOMRA as this project would not have been possible without it. A special thanks goes to Jim Henry and Kate O'Byrne at TOMRA who have been great helps and fantastic resources while trying to understand the data and systems. A final gratitude goes to my family who have supported me throughout the MSc program.
+ 
+\section*{Summary}
+
+Biological neural networks are inherently multifunctional - they can exhibit multiple patterns based on the needs of the environment. In this thesis, we ask ourselves whether we can replicate such behaviour using the LSTM neural networks. Previous work has been established that this effect can be observed in Reservoir Computers, and we extend these results to LSTMs.
+
+\textbf{Keywords}: Long-Short Term Memory; Neural Networks; Dynamical Systems; Limit Cycle
+
+In this report we will do the following
+\begin{enumerate}
+    \item Briefly describe the motivation behind the multifunctionality
+    \item Review the previous work done with Reservoir Computers
+    \item Explain LSTMs in depth
+    \item Review modelling of dynamical systems with LSTMs
+    \item Finally, explore multifunctionality using LSTMs
+\end{enumerate}
+  \end{@twocolumnfalse}
+]
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \begin{center}
+       \section*{PART I - Introduction}
+  \end{center}
+  \end{@twocolumnfalse}
+]
+
+\input{Chapters/p1-Motivation.tex}
+\newpage
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \begin{center}
+       \section*{PART II - Long-Short Term Memory Neural Networks}
+  \end{center}
+  \end{@twocolumnfalse}
+]
+
+\input{Chapters/p2-Review.tex}
+\newpage
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \begin{center}
+       \section*{PART III - Basics of Dynamical Systems}
+  \end{center}
+  \end{@twocolumnfalse}
+]
+
+\input{Chapters/p3-Dynamical.tex}
+\newpage
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \begin{center}
+       \section*{PART IV - Modelling Dynamical Systems using LSTMs}
+  \end{center}
+  \end{@twocolumnfalse}
+]
+
+\input{Chapters/p3-Dynamical.tex}
+\newpage
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+  \begin{center}
+       \section*{Bibliography}
+  \end{center}
+  \end{@twocolumnfalse}
+]
+\bibliography{References/refs}
+
+\end{document}

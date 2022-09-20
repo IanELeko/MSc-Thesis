@@ -1,0 +1,115 @@
+\section*{Introduction}
+
+We assume the reader is familiar with the concept of neural networks and the intricancies of ANNs (i.e. the vanilla NNs). In this part we will first introduce and describe recurrent neural networks (RNNs) as following:
+\begin{enumerate}
+    \item Motivate development of recurrent neural networks (RNNs)
+    \item Mathematically describe basic RNNs
+    \item Motivate development of long-short term memory neural networks (LSTMs)
+    \item Mathematically describe LSTMs
+\end{enumerate}
+Then, we will describe the computational representation of such networks via \textit{computational graphs} in the following order:
+\begin{enumerate}
+    \item Introduce the idea of computational graphs, forward- \& backward-propagation
+    \item Represent RNNs as a computational graph
+    \item Represent LSTMs as a computational graph
+\end{enumerate}
+
+Finally, we will explore LSTM impementation in \texttt{Tensorflow 2.0} and \texttt{Keras} packages. This will serve as the foundation for the further talk on multifunctionality in LSTMs.
+
+\subsection*{Recurrent Neural Networks}
+\subsubsection*{Motivation}
+ANNs, while universal function approximators, do not take into account relationship between inputs, most notably the temporal relationship. For example and following \cite{aggarwalNeuralNetworksDeep2018}, suppose we were to pass the sentences
+\begin{align}
+    &\texttt{The cat chased the mouse}\\
+    &\texttt{The mouse chased the cat}
+\end{align}
+to an ANN. Each word would be an input and the network would think of the two sentences as being the same. However fine this might be for a simpler task such as classification, it is missing the nuance required for more complicated tasks such as machine translation. Thus for more complicated tasks when working with sequential data, we want to encapsculate that sequentiallity in our model.
+
+\subsubsection*{History}
+Recurrent neural networks, as in the neural networks with feedback/self-looping structure have been present in the reasearch since 1980s, for example in \cite{rumelhartLearningInternalRepresentations1985} and \cite{jordanSerialOrderParallel1986} which investigated network structures suitable for sequential data, especially using the recurrent links to provide the network with dynamic memory. Then \cite{elmanFindingStructureTime1990} published the seminal \textit{Finiding Structure in Time} which provided for a reference RNN model for the time to come. In the next section we will describe the \textit{Elman} model mathematically.
+
+\subsubsection*{Mathematics}
+For this section we will describe how a classic, or Elman, RNN operates. Diagram of such an RNN is shown in figure \ref{fig:rnn-diagram-temporal}. The network has a inner variable, the \textit{hidden state}, denoted by $h_0$. Usually it is initialised to a vector of $0$s. Then it is successively combined with inputs $x_1,\dots,x_n$ to obtain a new hidden state. Finally, each hidden state can produce an output of its own. Sometimes this is useful, but sometimes we only care about the final output after we have run through all the inputs (for example, in case of classification).
+
+Mathematically, we start with variables
+$$ h_0,\quad x_1, \quad \dots, \quad x_n $$
+each representing a vector in $\mathbb{R}^d$ for some arbitrary dimension $d$. Then, at each time step $t$ correspoding to the input $x_t$ we can calculate the new hidden state $h_t$ and the correspoding output $y_t$ as
+
+\begin{align}
+    h_t &= \sigma\left(W_{xh}x_t + W_{hh}h_{t-1}\right) \\
+    y_t &= W_{hy}h_t
+\end{align}
+
+where
+
+$$ W_{xh}, \quad W_{hh}, \quad W_{hy} $$
+
+are inner parameter matrices that are learnable. $\sigma$ represents an arbitrary non-linear activation function.
+
+\begin{figure*}[!b]
+    \begin{center}
+        \includegraphics[scale=0.4]{Images/rnn-diagram-temporal.png}
+        \caption{RNN and its temporal representation (\cite{aggarwalNeuralNetworksDeep2018})}
+        \label{fig:rnn-diagram-temporal}
+    \end{center}
+\end{figure*}
+
+\subsection*{Long Short Term Memory}
+\subsubsection*{Motivation \& History}
+RNNs have been notorious for being hard to train, especially over long sequences with the standard backpropagation techniques for learning: \cite{bengioLearningLongtermDependencies1994} provide detailed overview of the problem and rudimentary solutions.Usually the problems crystalise in one of the two ways: gradient vanishing and gradient exploding (see Chapter 7 of \cite{aggarwalNeuralNetworksDeep2018} for an overview). Multiple solutions have been proposed, but the most popular one has been the Long Short Term Memory variant introduced by \cite{hochreiterLongShortTermMemory1997}. In fact, ``Almost all exciting results based on RNNs have been achieved by LSTM, and thus it has become the focus of deep learning.'' (\cite{yuReviewRecurrentNeural2019}). The ``vanilla'' LSTM we will describe in detail in the following sections is assumed to be the original LSTM with addition of forget gate and with peephole connections (\cite{vanhoudtReviewLongShortTerm2020}). This format has been the upgrade of the original model by one of the inventors in \cite{gersLearningForgetContinual2000}. The 
+
+\subsubsection*{Mathematics}
+Figure \ref{fig:lstm-architecture} shows diagram of a vanilla LSTM block. Note that, compared with Elman RNN, we have one more hidden variable, denoted by $c$ (cell state). The key innovation of LSTM is that we control information flow to-and-from the cell state with carefully devised operations.
+
+Again we start with inner states and the input variables
+$$ c_0, \quad h_0, \quad x_1, \quad \dots, \quad x_n $$
+where 
+$$c_0\in\mathbb{R}^C,\ h_0\in\mathbb{R}^H, \textrm{ and } x_i\in\mathbb{R}^X\ \forall i\in\{1,\dots,n\}$$
+Following \cite{yuReviewRecurrentNeural2019}, the formulas for the gates and the hidden states at the time step $t$, corresponding to the input $x_t$, are:
+\begin{align}
+    f_t &= \sigma\left( W_{fh}h_{t-1} + W_{fx}x_t + P_f \odot c_{t-1} + b_f \right) \\
+    i_t &= \sigma\left( W_{ih}h_{t-1} + W_{ix}x_t + P_i \odot c_{t-1} + b_i \right) \\
+    \tilde{c}_t &= \tanh\left( W_{\tilde{c}h}h_{t-1} + W_{\tilde{c}x}x_t + b_{\tilde{c}} \right) \\
+    c_t &= f_t \odot c_{t-1} + i_t \odot \tilde{c}_t \\
+    o_t &= \sigma\left( W_{oh}h_{t-1} + W_{ox}x_t + P_o \odot c_t + b_o \right) \\
+    h_t &= o_t \odot \tanh(c_t)
+\end{align}
+
+\begin{figure*}[!b]
+    \begin{center}
+        \includegraphics[scale=0.55]{Images/lstm-architecture.png}
+        \caption{Vanilla LSTM cell (\cite{yuReviewRecurrentNeural2019})}
+        \label{fig:lstm-architecture}
+    \end{center}
+\end{figure*}
+
+where the $\odot$ represents the Hadamard product (the element-wise multiplication). Now we have 
+$$ P_f, \quad P_i, \quad P_o $$
+as the peephole weights for the forget, input and the output gate respectively. Similarly to before, 
+$$ W_{fh}, \quad W_{fx}, \quad W_{ih}, \quad W_{ix}, \quad W_{\tilde{c}h}, \quad W_{\tilde{c}x}, \quad W_{oh}, \quad W_{ox} $$
+are the trainable inner matrices and
+$$ b_f, \quad b_i, \quad b_{\tilde{c}}, \quad b_o $$
+represent the trainable biases.
+
+\newpage
+\subsection*{LSTMs in \texttt{tensorflow}}
+In this section we describe how the LSTMs are implemented as part of the \textit{Tensorflow 2.0} and \textit{Keras} libraries for the Python programming language. We will discuss how the parameters correspond to the mathematics discussed in the previous sections.
+
+\subsubsection*{Tensorflow 2.0 \& Keras}
+``TensorFlow is an interface for expressing machine learning algorithms and an implementation for executing such algorithms.'' (\cite{abadiTensorFlowLargeScaleMachine}). On top of \texttt{tensorflow}, Keras (\cite{chollet2015keras}) provides top-line functionality for quick creation and maintainance of commonly used neural network types, including LSTMs. Let us look at the parameters for the \texttt{keras} implementation (whole list is shown in Figure \ref{fig:keras-LSTM-parameters}). LSTM is incorporated directly in \texttt{keras} as a layer found in \texttt{tensorflow.keras.layers.LSTM} as seen in the Figure \ref{fig:keras-LSTM-parameters}.
+
+\begin{enumerate}
+    \item \texttt{units} - number of separate LSTM networks that the layer models. It is one of the dimensions of the output
+    \item \texttt{activation} - 
+\end{enumerate}
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=1]{Images/keras-lstm-parameters.png}
+        \caption{Keras LSTM class parameters (\cite{teamKerasDocumentationLSTM})}
+        \label{fig:keras-LSTM-parameters}
+    \end{center}
+\end{figure}
+
+
+

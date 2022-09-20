@@ -1,0 +1,9 @@
+@article{getting1989emerging,
+  title={Emerging principles governing the operation of neural networks},
+  author={Getting, Peter A},
+  journal={Annual review of neuroscience},
+  volume={12},
+  number={1},
+  pages={185--204},
+  year={1989}
+}

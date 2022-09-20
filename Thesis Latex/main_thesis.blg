@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main_thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: unsrtnat.bst
+Reallocating 'name_of_file' (item size: 1) to 16 items.
+Database file #1: References/refs.bib
+Warning--empty journal in abadiTensorFlowLargeScaleMachine
+Warning--empty year in abadiTensorFlowLargeScaleMachine
+Warning--empty year in abadiTensorFlowLargeScaleMachine
+Warning--empty year in teamKerasDocumentationLSTM
+You've used 19 entries,
+            2481 wiz_defined-function locations,
+            710 strings with 9576 characters,
+and the built_in function-call counts, 8139 in all, are:
+= -- 661
+> -- 521
+< -- 13
++ -- 196
+- -- 158
+* -- 719
+:= -- 1372
+add.period$ -- 77
+call.type$ -- 19
+change.case$ -- 38
+chr.to.int$ -- 19
+cite$ -- 23
+duplicate$ -- 346
+empty$ -- 659
+format.name$ -- 188
+if$ -- 1666
+int.to.chr$ -- 1
+int.to.str$ -- 20
+missing$ -- 16
+newline$ -- 123
+num.names$ -- 57
+pop$ -- 134
+preamble$ -- 1
+purify$ -- 19
+quote$ -- 0
+skip$ -- 197
+stack$ -- 0
+substring$ -- 360
+swap$ -- 51
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 130
+warning$ -- 4
+while$ -- 60
+width$ -- 0
+write$ -- 289
+(There were 4 warnings)

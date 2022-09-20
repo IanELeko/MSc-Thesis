@@ -1,0 +1,163 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Getting(1989)]{gettingEmergingPrinciplesGoverning1989}
+Peter~A. Getting.
+\newblock Emerging principles governing the operation of neural networks.
+\newblock \emph{Annual review of neuroscience}, 12\penalty0 (1):\penalty0
+  185--204, 1989.
+
+\bibitem[Kriegeskorte and Golan(2019)]{kriegeskorteNeuralNetworkModels2019}
+Nikolaus Kriegeskorte and Tal Golan.
+\newblock Neural network models and deep learning.
+\newblock \emph{Current Biology}, 29\penalty0 (7):\penalty0 R231--R236, April
+  2019.
+\newblock ISSN 0960-9822.
+\newblock \doi{10.1016/j.cub.2019.02.034}.
+
+\bibitem[Dumor and Li(2019)]{dumorEstimatingChinaTrade2019}
+Koffi Dumor and Yao Li.
+\newblock Estimating {{China}}'s {{Trade}} with {{Its Partner Countries}}
+  within the {{Belt}} and {{Road Initiative Using Neural Network Analysis}}.
+\newblock \emph{Sustainability}, 11:\penalty0 1449, March 2019.
+\newblock \doi{10.3390/su11051449}.
+
+\bibitem[Scarselli and
+  Chung~Tsoi(1998)]{scarselliUniversalApproximationUsing1998}
+Franco Scarselli and Ah~Chung~Tsoi.
+\newblock Universal {{Approximation Using Feedforward Neural Networks}}: {{A
+  Survey}} of {{Some Existing Methods}}, and {{Some New Results}}.
+\newblock \emph{Neural Networks}, 11\penalty0 (1):\penalty0 15--37, January
+  1998.
+\newblock ISSN 0893-6080.
+\newblock \doi{10.1016/S0893-6080(97)00097-X}.
+
+\bibitem[Flynn et~al.(2021)Flynn, Tsachouridis, and
+  Amann]{flynnMultifunctionalityReservoirComputer2021a}
+Andrew Flynn, Vassilios~A. Tsachouridis, and Andreas Amann.
+\newblock Multifunctionality in a reservoir computer.
+\newblock \emph{Chaos: An Interdisciplinary Journal of Nonlinear Science},
+  31\penalty0 (1):\penalty0 013125, 2021.
+
+\bibitem[Briggman and
+  Kristan(2006)]{briggmanImagingDedicatedMultifunctional2006}
+Kevin~L. Briggman and William~B. Kristan.
+\newblock Imaging {{Dedicated}} and {{Multifunctional Neural Circuits
+  Generating Distinct Behaviors}}.
+\newblock \emph{J. Neurosci.}, 26\penalty0 (42):\penalty0 10925--10933, October
+  2006.
+\newblock ISSN 0270-6474, 1529-2401.
+\newblock \doi{10.1523/JNEUROSCI.3265-06.2006}.
+
+\bibitem[Esch et~al.(2002)Esch, Mesce, and
+  Kristan]{eschEvidenceSequentialDecision2002}
+Teresa Esch, Karen~A. Mesce, and William~B. Kristan.
+\newblock Evidence for {{Sequential Decision Making}} in the {{Medicinal
+  Leech}}.
+\newblock \emph{J. Neurosci.}, 22\penalty0 (24):\penalty0 11045--11054,
+  December 2002.
+\newblock ISSN 0270-6474, 1529-2401.
+\newblock \doi{10.1523/JNEUROSCI.22-24-11045.2002}.
+
+\bibitem[Aggarwal(2018)]{aggarwalNeuralNetworksDeep2018}
+Charu~C. Aggarwal.
+\newblock \emph{Neural {{Networks}} and {{Deep Learning}}: {{A Textbook}}}.
+\newblock {Springer International Publishing}, {Cham}, 2018.
+\newblock ISBN 978-3-319-94462-3 978-3-319-94463-0.
+\newblock \doi{10.1007/978-3-319-94463-0}.
+
+\bibitem[Rumelhart et~al.(1985)Rumelhart, Hinton, and
+  Williams]{rumelhartLearningInternalRepresentations1985}
+David~E. Rumelhart, Geoffrey~E. Hinton, and Ronald~J. Williams.
+\newblock Learning internal representations by error propagation.
+\newblock Technical report, {California Univ San Diego La Jolla Inst for
+  Cognitive Science}, 1985.
+
+\bibitem[Jordan(1986)]{jordanSerialOrderParallel1986}
+M.~I. Jordan.
+\newblock Serial order: A parallel distributed processing approach.
+  {{Technical}} report, {{June}} 1985-{{March}} 1986.
+\newblock Technical Report AD-A-173989/5/XAB; ICS-8604, {California Univ., San
+  Diego, La Jolla (USA). Inst. for Cognitive Science}, May 1986.
+
+\bibitem[Elman(1990)]{elmanFindingStructureTime1990}
+Jeffrey~L. Elman.
+\newblock Finding {{Structure}} in {{Time}}.
+\newblock \emph{Cognitive Science}, 14\penalty0 (2):\penalty0 179--211, 1990.
+\newblock ISSN 1551-6709.
+\newblock \doi{10.1207/s15516709cog1402_1}.
+
+\bibitem[Bengio et~al.(1994)Bengio, Simard, and
+  Frasconi]{bengioLearningLongtermDependencies1994}
+Y.~Bengio, P.~Simard, and P.~Frasconi.
+\newblock Learning long-term dependencies with gradient descent is difficult.
+\newblock \emph{IEEE Transactions on Neural Networks}, 5\penalty0 (2):\penalty0
+  157--166, March 1994.
+\newblock ISSN 1941-0093.
+\newblock \doi{10.1109/72.279181}.
+
+\bibitem[Hochreiter and Schmidhuber(1997)]{hochreiterLongShortTermMemory1997}
+Sepp Hochreiter and J{\"u}rgen Schmidhuber.
+\newblock Long {{Short-Term Memory}}.
+\newblock \emph{Neural Computation}, 9\penalty0 (8):\penalty0 1735--1780,
+  November 1997.
+\newblock ISSN 0899-7667.
+\newblock \doi{10.1162/neco.1997.9.8.1735}.
+
+\bibitem[Yu et~al.(2019)Yu, Si, Hu, and Zhang]{yuReviewRecurrentNeural2019}
+Yong Yu, Xiaosheng Si, Changhua Hu, and Jianxun Zhang.
+\newblock A {{Review}} of {{Recurrent Neural Networks}}: {{LSTM Cells}} and
+  {{Network Architectures}}.
+\newblock \emph{Neural Computation}, 31\penalty0 (7):\penalty0 1235--1270, July
+  2019.
+\newblock ISSN 0899-7667.
+\newblock \doi{10.1162/neco_a_01199}.
+
+\bibitem[Van~Houdt et~al.(2020)Van~Houdt, Mosquera, and
+  N{\'a}poles]{vanhoudtReviewLongShortTerm2020}
+Greg Van~Houdt, Carlos Mosquera, and Gonzalo N{\'a}poles.
+\newblock A {{Review}} on the {{Long Short-Term Memory Model}}.
+\newblock \emph{Artificial Intelligence Review}, 53, December 2020.
+\newblock \doi{10.1007/s10462-020-09838-1}.
+
+\bibitem[Gers et~al.(2000)Gers, Schmidhuber, and
+  Cummins]{gersLearningForgetContinual2000}
+Felix~A. Gers, J{\"u}rgen Schmidhuber, and Fred Cummins.
+\newblock Learning to forget: {{Continual}} prediction with {{LSTM}}.
+\newblock \emph{Neural computation}, 12\penalty0 (10):\penalty0 2451--2471,
+  2000.
+
+\bibitem[Abadi et~al.()Abadi, Agarwal, Barham, Brevdo, Chen, Citro, Corrado,
+  Davis, Dean, Devin, Ghemawat, Goodfellow, Harp, Irving, Isard, Jia,
+  Jozefowicz, Kaiser, Kudlur, Levenberg, Mane, Monga, Moore, Murray, Olah,
+  Schuster, Shlens, Steiner, Sutskever, Talwar, Tucker, Vanhoucke, Vasudevan,
+  Viegas, Vinyals, Warden, Wattenberg, Wicke, Yu, and
+  Zheng]{abadiTensorFlowLargeScaleMachine}
+Mart{\i}n Abadi, Ashish Agarwal, Paul Barham, Eugene Brevdo, Zhifeng Chen,
+  Craig Citro, Greg~S Corrado, Andy Davis, Jeffrey Dean, Matthieu Devin, Sanjay
+  Ghemawat, Ian Goodfellow, Andrew Harp, Geoffrey Irving, Michael Isard,
+  Yangqing Jia, Rafal Jozefowicz, Lukasz Kaiser, Manjunath Kudlur, Josh
+  Levenberg, Dan Mane, Rajat Monga, Sherry Moore, Derek Murray, Chris Olah,
+  Mike Schuster, Jonathon Shlens, Benoit Steiner, Ilya Sutskever, Kunal Talwar,
+  Paul Tucker, Vincent Vanhoucke, Vijay Vasudevan, Fernanda Viegas, Oriol
+  Vinyals, Pete Warden, Martin Wattenberg, Martin Wicke, Yuan Yu, and Xiaoqiang
+  Zheng.
+\newblock {{TensorFlow}}: {{Large-Scale Machine Learning}} on {{Heterogeneous
+  Distributed Systems}}.
+\newblock page~19.
+
+\bibitem[Chollet et~al.(2015)]{chollet2015keras}
+Francois Chollet et~al.
+\newblock Keras.
+\newblock https://github.com/fchollet/keras, 2015.
+
+\bibitem[Team()]{teamKerasDocumentationLSTM}
+Keras Team.
+\newblock Keras documentation: {{LSTM}} layer.
+\newblock https://keras.io/api/layers/recurrent\_layers/lstm/.
+
+\end{thebibliography}
